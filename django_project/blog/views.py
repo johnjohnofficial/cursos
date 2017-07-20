@@ -17,14 +17,14 @@ def home(request):
 
 	all_categories = Category.objects.all()
 
-	category_python = Category.objects.get(name='Ruby')
+	# category_python = Category.objects.get(name='Ruby')
 
-	post = Post()
-	post.name = 'Show Post 7'	
-	post.content = "content"
-	post.status = "Draft"
-	post.category = category_python
-	post.save()
+	# post = Post()
+	# post.name = 'Show Post 7'	
+	# post.content = "content"
+	# post.status = "Draft"
+	# post.category = category_python
+	# post.save()
 
 	posts = Post.objects.filter(status='Published')
 
