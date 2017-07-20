@@ -6,5 +6,5 @@ from blog import views
 
 urlpatterns = [
     url(r'^$', views.home, name='blog.home'),
-    url(r'/category/(?P<category_id>\d+)', views.show_post_by_category, name='blog.show_post_by_category'),
+    url(r'category/(?P<category_id>\d+)', views.show_post_by_category, name='blog.show_post_by_category'),
 ]
