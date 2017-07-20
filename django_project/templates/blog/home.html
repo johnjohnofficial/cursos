@@ -1,0 +1,14 @@
+{% extends "blog/layout.html" %}
+
+{% block title %} Joao's Blog {% endblock %}
+
+{% block content %}
+<section>
+	<article>
+		<h2>{{post.name}} ({{post.category.name}})</h2>
+		<p>
+			{{post.content}}
+		</p>
+	</article>
+</section>
+{% endblock %}
