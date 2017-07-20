@@ -17,22 +17,40 @@ def home(request):
 
 	all_categories = Category.objects.all()
 
-	# category_python = Category.objects.get(name='Python')
+	category_python = Category.objects.get(name='Ruby')
 
-	# post = Post()
-	# post.name = 'My First very Post'	
-	# post.content = "Content of my first Post"
-	# post.status = "Published"
-	# post.category = category_python
-	# post.save()
+	post = Post()
+	post.name = 'Show Post 7'	
+	post.content = "content"
+	post.status = "Draft"
+	post.category = category_python
+	post.save()
 
-	post = Post.objects.get(pk=1)
+	posts = Post.objects.filter(status='Published')
 
 
 	context = {
 		'name': name,
 		'categories': all_categories,
-		'post':post,
+		'posts':posts,
+	}
+
+	return render(request, 'blog/home.html', context)
+
+def show_post_by_category(request, category_id):
+
+	name = "João"
+
+	all_categories = Category.objects.all()
+
+	category = Category.objects.get(pk=category_id)
+
+	posts = Post.objects.filter(category=category, status='Published')
+
+	context = {
+		'name': name,
+		'categories': all_categories,
+		'posts': posts,
 	}
 
 	return render(request, 'blog/home.html', context)
