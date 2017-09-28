@@ -1,0 +1,18 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}John's Blog{% endblock %}
+
+{% block content %}
+<main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+    {% for post in posts %}
+    <article>
+        <h2>{{ post.name }} ({{ post.category.name }})</h2>
+
+        <p>
+            {{ post.content }}
+        </p>
+        <hr>
+    </article>
+    {% endfor %}
+</main>
+{% endblock %}
